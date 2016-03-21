@@ -13,7 +13,7 @@
 
 Route::get('/','HomeController@front_page');
 Route::get('/login','HomeController@showLogin');
-Route::get('/home','HomeController@home');
+//Route::get('/home','HomeController@home');
 Route::get('/editor_arduino','EditorController@editor_arduino');
 Route::get('/editor_pi','EditorController@editor_pi');
 Route::get('/blockly','EditorController@editor_blockly');
@@ -26,6 +26,11 @@ Route::post('/editor/compile_arduino','EditorController@compile_arduino');
 
 Route::post('/editor/compile_pi','EditorController@compile_pi');
 
+
+
+Route::get('/home', array('as' => 'home', 'uses' => function(){
+  return view('Pages.Home.home');
+}));
 
 /*
 |--------------------------------------------------------------------------

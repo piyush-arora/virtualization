@@ -29,8 +29,9 @@ class HomeController extends Controller
     {
         
         $user = Socialize::with('facebook')->user();
-        // return view('Pages.Home.home')->with('user', $user);
-        return view('Pages.thanks')->with('user', $user);
+       
+       return view('Pages.thanks')->with('user', $user);
+       
     // $user->token;
     }
     
@@ -51,9 +52,10 @@ class HomeController extends Controller
         
         
         
-        //return view('Pages.Home.home')->with('user', $user);
         
         return view('Pages.thanks')->with('user', $user);
+        
+       // return redirect()->route('home'); //workiing
     // $user->token;
     }
     
